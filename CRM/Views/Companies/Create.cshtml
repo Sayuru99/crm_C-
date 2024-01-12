@@ -1,0 +1,54 @@
+@model Company
+
+<h2>Create Company</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Nip" class="control-label"></label>
+        <input asp-for="Nip" class="form-control" />
+        <span asp-validation-for="Nip" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BusinessId" class="control-label"></label>
+        <input asp-for="BusinessId" class="form-control" />
+        <span asp-validation-for="BusinessId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address" class="control-label"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="City" class="control-label"></label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UserId" class="control-label"></label>
+        <input asp-for="UserId" class="form-control" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CreationDate" class="control-label"></label>
+        <input asp-for="CreationDate" type="datetime-local" class="form-control" />
+        <span asp-validation-for="CreationDate" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Back to List</a>

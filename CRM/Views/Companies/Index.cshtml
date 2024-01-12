@@ -1,0 +1,61 @@
+@model List<Company>
+
+<h2>Companies Index</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>NIP</th>
+                <th>Business ID</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>User ID</th>
+                <th>Creation Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var company in Model)
+            {
+                <tr>
+                    <td>@company.Id</td>
+                    <td>@company.Name</td>
+                    <td>@company.Nip</td>
+                    <td>@company.BusinessId</td>
+                    <td>@company.Address</td>
+                    <td>@company.City</td>
+                    <td>@company.UserId</td>
+                    <td>@company.CreationDate.ToShortDateString()</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@company.Id" class="btn btn-info">Details</a>
+                        <a asp-action="Edit" asp-route-id="@company.Id" class="btn btn-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@company.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+    </script>
+
+    <style>
+        .table-responsive {
+            margin-top: 20px;
+        }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+    </style>
+}

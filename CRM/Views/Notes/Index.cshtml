@@ -1,0 +1,37 @@
+@model List<CRM.Models.Note>
+
+<h2>Note Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Content</th>
+            <th>Company ID</th>
+            <th>User ID</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var note in Model)
+        {
+            <tr>
+                <td>@note.Id</td>
+                <td>@note.Content</td>
+                <td>@note.CompanyId</td>
+                <td>@note.UserId</td>
+                <td>@(note.IsDeleted == 0 ? "Started" : "Completed")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@note.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@note.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@note.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

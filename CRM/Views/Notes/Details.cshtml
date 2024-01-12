@@ -1,0 +1,27 @@
+@model Note
+
+<h2>Note Details</h2>
+
+<div>
+    <h4>Note</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            ID
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Id
+        </dd>
+
+        <dt class="col-sm-2">
+            Content
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Content
+        </dd>
+        <!-- Add sections for other note properties as needed -->
+    </dl>
+</div>
+<p>
+    <a asp-action="Index">Back to List</a>
+</p>
